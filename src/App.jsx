@@ -1238,7 +1238,7 @@ export default function Portfolio() {
                         </div>
                     </div>
                     <div className={`border-t py-4 text-center text-xs ${dark ? "border-slate-800" : "border-slate-200"}`}>
-                        © {new Date().getFullYear()} {PROFILE.name}. Conçu avec React et Tailwind CSS.
+                        © {new Date().getFullYear()} {PROFILE.name}.
                     </div>
                 </footer>
             </div>
