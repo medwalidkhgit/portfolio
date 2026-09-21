@@ -28,8 +28,8 @@ const PROFILE = {
         "Je conçois des backends Java / Spring Boot performants, cloud-natifs et livrés en continu grâce à Docker, Kubernetes, AWS et des pipelines CI/CD.",
     email: "medwalidkh7@gmail.com",
     location: "Casablanca, Maroc",
-    github: "https://github.com/medwalidkhgit",
-    linkedin: "https://www.linkedin.com/in/medwalidkh/",
+    github: "https://github.com/",
+    linkedin: "https://www.linkedin.com/in/",
     cv: "/CV_Mohamed_Walid_Kharmoudi.pdf",
     cvFileName: "CV_Mohamed_Walid_Kharmoudi.pdf",
 };
@@ -1238,7 +1238,7 @@ export default function Portfolio() {
                         </div>
                     </div>
                     <div className={`border-t py-4 text-center text-xs ${dark ? "border-slate-800" : "border-slate-200"}`}>
-                        © {new Date().getFullYear()} {PROFILE.name}.
+                        © {new Date().getFullYear()} {PROFILE.name}. Conçu avec React et Tailwind CSS.
                     </div>
                 </footer>
             </div>
