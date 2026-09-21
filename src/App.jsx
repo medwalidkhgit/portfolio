@@ -340,7 +340,7 @@ const DARK = {
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
 html{scroll-behavior:smooth}
-.pf-root{font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+.pf-root{font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
 .pf-root button,.pf-root input,.pf-root textarea{font-family:inherit}
 .pf-heading{font-family:'Space Grotesk','Inter',ui-sans-serif,system-ui,sans-serif}
 
@@ -659,7 +659,7 @@ export default function Portfolio() {
     return (
         <div
             data-theme={t.mode}
-            className={`pf-root relative min-h-screen overflow-x-hidden transition-colors duration-300 ${t.page}`}
+            className={`pf-root relative min-h-screen overflow-x-clip transition-colors duration-300 ${t.page}`}
         >
             <style>{CSS}</style>
 
