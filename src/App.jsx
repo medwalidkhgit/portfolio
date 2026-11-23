@@ -8,7 +8,6 @@ const profile = {
     name: 'Mohamed Walid Kharmoudi',
     title: 'Software Engineer et DevOps/Cloud Enthusiast',
     description: 'Élève-ingénieur en dernière année de génie informatique à l’ENSA Marrakech, je recherche un stage de fin d’études (PFE) de 6 mois en Full Stack, DevOps et Cloud. Mes stages et projets académiques m’ont permis d’acquérir une expérience pratique dans la conception et le développement d’applications d’entreprise et d’architectures microservices, ainsi que dans l’automatisation des pipelines CI/CD et le déploiement d’applications sur le cloud.',
-    location: 'Casablanca, Maroc',
     cv: import.meta.env.BASE_URL + 'CV_Mohamed_Walid_Kharmoudi.pdf',
 };
 
@@ -76,14 +75,6 @@ const projects = [
             'Sécurisation des API REST avec authentification JWT, vérification par OTP et contrôle d’accès basé sur les rôles (RBAC) pour quatre profils utilisateurs.',
             'Déploiement de l’application sur Microsoft Azure, avec configuration de l’environnement cloud et mise en production des services backend, frontend et de la base de données.',
         ],
-    },
-    {
-        title: 'Smart City',
-        area: 'Data & Cloud',
-        year: '2025–2026',
-        description: 'Chaîne de traitement de données IoT pour surveiller des équipements et déclencher des alertes.',
-        details: 'Azure IoT Hub et Kafka assurent l’ingestion. Spark Structured Streaming traite les flux et Delta Lake sur Azure ADLS conserve les données.',
-        stack: 'Azure IoT Hub · Kafka · Spark · Delta Lake',
     },
 ];
 
@@ -224,7 +215,6 @@ function Profile() {
             {!portraitFailed && (
                 <figure className="portrait">
                     <img src={profilePhoto} alt={'Portrait de ' + profile.name} width="870" height="1120" fetchPriority="high" onError={() => setPortraitFailed(true)} />
-                    <figcaption>{profile.location}</figcaption>
                 </figure>
             )}
         </section>
@@ -248,15 +238,10 @@ function WorkEntry({ entry }) {
                 {entry.logo && <img className="stage-logo" src={entry.logo} alt="" width="72" height="48" loading="lazy" />}
                 <div>
                     {entry.date && <p className="date">{entry.date}</p>}
-                    {entry.area && <p className="date">{entry.area} · {entry.year}</p>}
                     <h3>{entry.title}</h3>
                 </div>
             </div>
-            {entry.bullets ? (
-                <ul className="work-points">{entry.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
-            ) : (
-                <div className="work-description"><p>{entry.description}</p><p>{entry.details}</p></div>
-            )}
+            <ul className="work-points">{entry.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
             <p className="technology"><strong>Technologies</strong><span>{entry.stack}</span></p>
         </article>
     );
@@ -317,7 +302,6 @@ export default function App() {
                     <address>
                         <dl className="contact-list">
                             {contact.map(([label, value, href]) => <div key={label}><dt>{label}</dt><dd><a href={href}>{value}</a></dd></div>)}
-                            <div><dt>Localisation</dt><dd>{profile.location}</dd></div>
                         </dl>
                     </address>
                 </Section>
